@@ -1,0 +1,158 @@
+$kolor: white;
+$kolor2: black;
+$kolor3: gray;
+$kolor4: brown;
+$rad: 8%;
+$opa:.4;
+
+@mixin te {
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+}
+@mixin zdj{
+  margin: auto;
+  width: 58vw;
+  height: 40vh;
+  opacity: 1;
+  animation-duration: 3s;
+  animation-name: pok;
+  border-radius: $rad;
+  z-index: 30;
+  text-align: center;
+  overflow-y: scroll;
+  p{color:$kolor4;
+  font-weight: bold;}
+  h3{margin-top: 8%;
+  color: $kolor4;
+font-weight: bolder;}
+}
+@mixin border($par){
+  @if $par == biala{border: 2px solid white;}
+  @else  if $par == czarna {border: 2px solid black;}
+  @else  if $par == mala{border: 1px solid white;}
+  @else {border:none;}
+  }
+
+  @for $u from 1 through 3 {
+    .wyb-#{$u} { font-size: 9px * $u + 10px; }
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+body{
+    background-color: black;
+    color: wheat;
+}
+.container {
+   height: 100vh;
+   width: 100vw;
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background-image: url(./tlo.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header header"
+      "naw art"
+      "naw footer";
+      opacity: .9;
+      @include border(heavy);
+      z-index: 10;
+  }
+  .hed {
+    background: $kolor2;
+    grid-area: header;
+    height: 20vh;
+    border-radius: $rad;
+    opacity: $opa;
+    h2{
+      margin-left: 18%;
+    }
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    @include border(biala);
+  }
+
+  .nav {
+    background: $kolor3;
+    width: 16vw;
+    grid-area: naw;
+    border-radius: $rad;
+    opacity: $opa;
+    margin-left: 20px;
+    @include te;
+    @include border(czarna);
+  }
+
+  .art {
+    background: $kolor2;
+    grid-area: art;
+    border-radius: $rad;
+    opacity: .86;
+    z-index: 15;
+    @include border(biala);
+  }
+
+  .fot {
+    background: $kolor;
+    grid-area: footer;
+    border-radius: $rad;
+    opacity: $opa;
+    margin-right: 5px;
+    color: $kolor3;
+    font-style: italic;
+    font-size: large;
+    text-align: center;
+    @include border(mala);
+  }
+
+  #par1 {
+    background-image: url(./arg.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include zdj;
+    @include te;
+    @include border(mala);
+  }
+
+  #par2 {
+     background-image: url(./brz.JPG);
+     background-repeat: no-repeat;
+     background-size: cover;
+     @include zdj;
+     @include te;
+     @include border(mala);
+  }
+  #par3 {
+     background-image: url(./chi.JPG);
+     background-repeat: no-repeat;
+     background-size: cover;
+     @include zdj;
+     @include te;
+     @include border(mala);
+  }
+  .hide{
+      display:none;
+  }
+  li{
+     cursor: pointer;
+     margin-top: 75px;
+     display: block;
+  }
+
+  @keyframes pok{
+      from{opacity:0}
+      to{opacity:1}
+  }
+h1{
+    margin-left: 40%;
+}
+li:hover{
+color: $kolor2;
+}
