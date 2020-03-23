@@ -1,6 +1,6 @@
 $kolor: white;
 $kolor2: black;
-$kolor3: gray;
+$kolor3: purple;
 $kolor4: brown;
 $rad: 8%;
 $opa:.4;
@@ -72,6 +72,7 @@ body{
     opacity: $opa;
     h2{
       margin-left: 18%;
+      color: $kolor4;
     }
     width: 80%;
     margin: auto;
@@ -80,7 +81,7 @@ body{
   }
 
   .nav {
-    background: $kolor3;
+    background: $kolor;
     width: 16vw;
     grid-area: naw;
     border-radius: $rad;
@@ -144,6 +145,8 @@ body{
      cursor: pointer;
      margin-top: 75px;
      display: block;
+     color: $kolor3;
+     font-weight: bold;
   }
 
   @keyframes pok{
@@ -154,5 +157,5 @@ h1{
     margin-left: 40%;
 }
 li:hover{
-color: $kolor2;
+color: $kolor4;
 }
